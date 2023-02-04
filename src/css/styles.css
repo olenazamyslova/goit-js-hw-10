@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -10,62 +16,118 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  margin: 0;
 }
 
-#search-box {
-  font: inherit;
-  padding: 8px;
-  max-width: 320px;
-  margin-bottom: 16px;
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(45deg, #30cfd0, #330867);
 }
 
-.country-list {
-  list-style: none;
-  padding: 0;
-}
-
-/* Стили для списка стран */
-
-.country-list__item {
+.search-form {
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.country-list__item__flag {
-  width: 30px;
-  height: 20px;
-}
-
-.country-list__item__name {
-  font-weight: 400;
-  font-size: 20px;
-  margin: 5px 10px;
-}
-
-/* Стили для детальной информации о стране */
-
-.country-list {
-  list-style: none;
-  padding: 0;
-}
-
-.country--list__item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.country-list__flag {
-  width: 60px;
+.input {
   height: 40px;
-  margin-right: 10px;
+  width: 400px;
+  font-size: 20px;
+  border-radius: 6px;
+  border: 0;
+  padding-left: 15px;
+  outline: none;
+}
+.button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  left: calc(50% + 160px);
+  background-color: #aaaaaa;
+  border: 0;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  padding: 0;
 }
 
-.country-list__name {
-  font-size: 30px;
+.btn__img {
+  width: 32px;
+  height: 32px;
 }
 
-.country-list__categories {
-  font-weight: bold;
-  margin-right: 5px;
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  transform-origin: center center;
+  animation: spinner 1s linear infinite;
+}
+
+.gallery {
+  display: flex;
+  gap: 12px;
+  padding-top: 80px;
+  flex-wrap: wrap;
+}
+
+.gallery__btn,
+.end-gallery {
+  width: 50%;
+  height: 50px;
+  margin: 20px auto;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 0;
+  border-radius: 5px;
+  background-color: #a58c2a;
+  color: #27277e;
+}
+
+.gallery__btn {
+  position: relative;
+  width: 170px;
+  gap: 10px;
+  background-color: #0000ff;
+  color: #dfac14;
+  cursor: pointer;
+}
+
+.photo-card {
+  width: calc((100% - 36px) / 4);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #212121;
+  box-shadow: 3px 3px 3px #aaaaaa, -3px 3px 3px #aaaaaa;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-grow: 1;
+}
+
+.info-item {
+  text-align: center;
+}
+
+.is-hidden {
+  display: none;
 }
