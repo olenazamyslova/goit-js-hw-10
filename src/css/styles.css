@@ -23,7 +23,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(45deg, #30cfd0, #330867);
+  background: #1167b1;
 }
 
 .search-form {
